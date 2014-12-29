@@ -1,0 +1,45 @@
+<!DOCTYPE qgis-layer-definition>
+<maplayers>
+  <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <datasource>D:\DOCUME~1\jenart\LOCALS~1\Temp\processing\9157e8ec9482478a8f1a97f5ed25b95b\SHADEALGSAGAANALYTICALHILLSHADING1.tif</datasource>
+    <title></title>
+    <abstract></abstract>
+    <keywordList>
+      <value></value>
+    </keywordList>
+    <layername>bs_hillshade</layername>
+    <srs>
+      <spatialrefsys>
+        <proj4>+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>145</srsid>
+        <srid>2154</srid>
+        <authid>EPSG:2154</authid>
+        <description>RGF93 / Lambert-93</description>
+        <projectionacronym>lcc</projectionacronym>
+        <ellipsoidacronym>GRS80</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </srs>
+    <customproperties>
+      <property key="identify/format" value="Value"/>
+    </customproperties>
+    <provider>gdal</provider>
+    <noData>
+      <noDataList bandNo="1" useSrcNoData="1"/>
+    </noData>
+    <pipe>
+      <rasterrenderer gradient="WhiteToBlack" opacity="0.313725" alphaBand="-1" type="singlebandgray" grayBand="1">
+        <rasterTransparency/>
+        <contrastEnhancement>
+          <minValue>0.529513</minValue>
+          <maxValue>1.24726</maxValue>
+          <algorithm>StretchToMinimumMaximum</algorithm>
+        </contrastEnhancement>
+      </rasterrenderer>
+      <brightnesscontrast brightness="0" contrast="50"/>
+      <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+      <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
+    </pipe>
+    <blendMode>0</blendMode>
+  </maplayer>
+</maplayers>

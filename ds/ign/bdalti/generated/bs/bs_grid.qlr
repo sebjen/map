@@ -1,0 +1,61 @@
+<!DOCTYPE qgis-layer-definition>
+<maplayers>
+  <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+    <datasource>D:\DOCUME~1\jenart\LOCALS~1\Temp\processing\439eeb7aaae44bb68f72fd3d48a95294\USERGRIDALGSAGABSPLINEAPPROXIMATION1.tif</datasource>
+    <title></title>
+    <abstract></abstract>
+    <keywordList>
+      <value></value>
+    </keywordList>
+    <layername>bs_grid</layername>
+    <srs>
+      <spatialrefsys>
+        <proj4>+proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>145</srsid>
+        <srid>2154</srid>
+        <authid>EPSG:2154</authid>
+        <description>RGF93 / Lambert-93</description>
+        <projectionacronym>lcc</projectionacronym>
+        <ellipsoidacronym>GRS80</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </srs>
+    <customproperties>
+      <property key="identify/format" value="Value"/>
+    </customproperties>
+    <provider>gdal</provider>
+    <noData>
+      <noDataList bandNo="1" useSrcNoData="1"/>
+    </noData>
+    <pipe>
+      <rasterrenderer opacity="1" alphaBand="-1" classificationMax="1857.41" classificationMinMaxOrigin="CumulativeCutFullExtentEstimated" band="1" classificationMin="0" type="singlebandpseudocolor">
+        <rasterTransparency/>
+        <rastershader>
+          <colorrampshader colorRampType="INTERPOLATED" clip="0">
+            <item alpha="255" value="0" label="0.000000" color="#28369a"/>
+            <item alpha="255" value="116.088" label="116.088125" color="#00c932"/>
+            <item alpha="255" value="232.176" label="232.176250" color="#1ed368"/>
+            <item alpha="255" value="348.264" label="348.264375" color="#5ee074"/>
+            <item alpha="255" value="464.353" label="464.352500" color="#a2eb82"/>
+            <item alpha="255" value="580.441" label="580.440625" color="#dff892"/>
+            <item alpha="255" value="696.529" label="696.528750" color="#f6e595"/>
+            <item alpha="255" value="812.617" label="812.616875" color="#c8b276"/>
+            <item alpha="255" value="928.705" label="928.705000" color="#a27e5e"/>
+            <item alpha="255" value="1044.79" label="1044.793125" color="#8f6154"/>
+            <item alpha="255" value="1160.88" label="1160.881250" color="#a27d74"/>
+            <item alpha="255" value="1276.97" label="1276.969375" color="#b2968b"/>
+            <item alpha="255" value="1393.06" label="1393.057500" color="#c7b0aa"/>
+            <item alpha="255" value="1509.15" label="1509.145625" color="#dbcdca"/>
+            <item alpha="255" value="1625.23" label="1625.233750" color="#ece4e2"/>
+            <item alpha="255" value="1741.32" label="1741.321875" color="#ffffff"/>
+            <item alpha="255" value="1857.41" label="1857.410000" color="#ffffff"/>
+          </colorrampshader>
+        </rastershader>
+      </rasterrenderer>
+      <brightnesscontrast brightness="0" contrast="0"/>
+      <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+      <rasterresampler maxOversampling="2"/>
+    </pipe>
+    <blendMode>0</blendMode>
+  </maplayer>
+</maplayers>

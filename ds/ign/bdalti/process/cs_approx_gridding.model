@@ -1,0 +1,211 @@
+{
+    "values": {
+        "inputs": {
+            "VECTORLAYER_MNTASVECTOR": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 37.0, 
+                            "x": 127.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "VECTORLAYER_MNTASVECTOR", 
+                            "shapetype": [
+                                0
+                            ], 
+                            "value": null, 
+                            "exported": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "MNTasVector"
+                        }, 
+                        "class": "processing.core.parameters.ParameterVector"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }, 
+            "TABLEFIELD_ZFIELD": {
+                "values": {
+                    "pos": {
+                        "values": {
+                            "y": 36.0, 
+                            "x": 352.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "param": {
+                        "values": {
+                            "isAdvanced": false, 
+                            "name": "TABLEFIELD_ZFIELD", 
+                            "parent": "VECTORLAYER_MNTASVECTOR", 
+                            "datatype": -1, 
+                            "value": null, 
+                            "hidden": false, 
+                            "optional": false, 
+                            "description": "Z Field"
+                        }, 
+                        "class": "processing.core.parameters.ParameterTableField"
+                    }
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.ModelerParameter"
+            }
+        }, 
+        "group": "gridding", 
+        "name": "cs_gridding", 
+        "algs": {
+            "SAGACUBICSPLINEAPPROXIMATION_1": {
+                "values": {
+                    "name": "SAGACUBICSPLINEAPPROXIMATION_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "USER_GRID": {
+                            "values": {
+                                "description": "cs_grid", 
+                                "pos": {
+                                    "values": {
+                                        "y": 219.0, 
+                                        "x": 407.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 174.0, 
+                            "x": 207.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "OUTPUT_EXTENT": null, 
+                        "TARGET": 0, 
+                        "K": 140.0, 
+                        "NPMIN": 1.0, 
+                        "SHAPES": {
+                            "values": {
+                                "name": "VECTORLAYER_MNTASVECTOR"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "FIELD": {
+                            "values": {
+                                "name": "TABLEFIELD_ZFIELD"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromInput"
+                        }, 
+                        "USER_SIZE": 200.0, 
+                        "NPPC": 3.0, 
+                        "NPMAX": 25.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:cubicsplineapproximation", 
+                    "description": "Cubic spline approximation"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGAANALYTICALHILLSHADING_1": {
+                "values": {
+                    "name": "SAGAANALYTICALHILLSHADING_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "SHADE": {
+                            "values": {
+                                "description": "cs_hillshade", 
+                                "pos": {
+                                    "values": {
+                                        "y": 333.0, 
+                                        "x": 675.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 288.0, 
+                            "x": 475.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "DECLINATION": 45.0, 
+                        "ELEVATION": {
+                            "values": {
+                                "alg": "SAGACUBICSPLINEAPPROXIMATION_1", 
+                                "output": "USER_GRID"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "METHOD": 3, 
+                        "EXAGGERATION": 4.0, 
+                        "AZIMUTH": 315.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:analyticalhillshading", 
+                    "description": "Analytical hillshading"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }, 
+            "SAGACONTOURLINESFROMGRID_1": {
+                "values": {
+                    "name": "SAGACONTOURLINESFROMGRID_1", 
+                    "paramsFolded": true, 
+                    "outputs": {
+                        "CONTOUR": {
+                            "values": {
+                                "description": "cs_contour", 
+                                "pos": {
+                                    "values": {
+                                        "y": 371.0, 
+                                        "x": 319.0
+                                    }, 
+                                    "class": "point"
+                                }
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ModelerOutput"
+                        }
+                    }, 
+                    "outputsFolded": true, 
+                    "pos": {
+                        "values": {
+                            "y": 326.0, 
+                            "x": 119.0
+                        }, 
+                        "class": "point"
+                    }, 
+                    "dependencies": [], 
+                    "params": {
+                        "INPUT": {
+                            "values": {
+                                "alg": "SAGACUBICSPLINEAPPROXIMATION_1", 
+                                "output": "USER_GRID"
+                            }, 
+                            "class": "processing.modeler.ModelerAlgorithm.ValueFromOutput"
+                        }, 
+                        "ZMIN": 0.0, 
+                        "ZMAX": 3000.0, 
+                        "ZSTEP": 100.0
+                    }, 
+                    "active": true, 
+                    "consoleName": "saga:contourlinesfromgrid", 
+                    "description": "Contour lines from grid"
+                }, 
+                "class": "processing.modeler.ModelerAlgorithm.Algorithm"
+            }
+        }
+    }, 
+    "class": "processing.modeler.ModelerAlgorithm.ModelerAlgorithm"
+}
